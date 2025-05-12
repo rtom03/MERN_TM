@@ -22,7 +22,7 @@ export const linkData = [
   {
     label: "Tasks",
     link: "tasks",
-    icon: <MdOutlinePendingActions />,
+    icon: <FaTasks />,
   },
   {
     label: "Status",
@@ -31,20 +31,16 @@ export const linkData = [
   },
   {
     label: "In Progress",
-    link: "/in-progress-task/:status",
+    link: "in-progress-task/status",
     icon: <MdOutlinePendingActions />,
   },
+
   {
     label: "Completed",
     link: "completed-task/:status",
     icon: <MdTaskAlt />,
   },
 
-  // {
-  //   label: "Tasks",
-  //   link: "tasks",
-  //   icon: <FaTasks />,
-  // },
   {
     label: "Team",
     link: "team",
@@ -66,7 +62,6 @@ const Sidebar = () => {
   const location = useLocation();
   const path = location.pathname.split("/")[1];
   const sidebarLinks = user.isAdmin ? linkData : linkData.slice(0, 5);
-  // console.log(user);
 
   const closeSidebar = () => {
     dispatch(setOpenSidebar(false));
