@@ -34,7 +34,7 @@ const UserAvatar = () => {
       <div className="">
         <Menu as="div" className="relative inline-block text-left">
           <div>
-            <Menu.Button className="w-10 h-10 2xl:w-12 2xl:h-12 items-center justify-center rounded-full bg-blue-600">
+            <Menu.Button className="w-10 h-10 2xl:w-12 2xl:h-12 items-center justify-center rounded-full core">
               {/* <span className="text-white font-semibold">
                 {<img src={companyData?.image} /> ||
                   companyData?.name?.slice(0, 2).toUpperCase()}
@@ -81,7 +81,7 @@ const UserAvatar = () => {
                   {({ active }) => (
                     <button
                       onClick={logoutHandler}
-                      className={`text-red-600 group flex w-full items-center rounded-md px-2 py-2 text-base`}
+                      className={`core-red group flex w-full items-center rounded-md px-2 py-2 text-base`}
                     >
                       <IoLogOutOutline className="mr-2" aria-hidden="true" />
                       Logout
