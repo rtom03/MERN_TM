@@ -60,12 +60,7 @@ export const TASK_TYPE = {
   completed: "bg-green-600",
 };
 
-export const BGS = [
-  "bg-blue-600",
-  "bg-yellow-600",
-  "bg-red-600",
-  "bg-green-600",
-];
+export const BGS = ["core", "bg-yellow-600", "bg-red-600", "bg-green-600"];
 
 export const getCompletedSubTasks = (items) => {
   const totalCompleted = items?.filter((item) => item?.isCompleted).length;
