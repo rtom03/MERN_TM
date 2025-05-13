@@ -1,4 +1,4 @@
-export const tasks = [
+export const dummyTasks = [
   {
     _id: "1",
     title: "Website Project Proposal",
@@ -244,6 +244,48 @@ export const tasks = [
   },
 ];
 
+export const summary = {
+  totalTasks: 10,
+  last10Task: [
+    {
+      _id: "1",
+      title: "Test task",
+      date: "2025-02-09T00:00:00.000Z",
+      priority: "high",
+      stage: "todo",
+      assets: [],
+      team: [
+        {
+          _id: 3,
+          name: "John Doe",
+          title: "administrator",
+          role: "admin",
+          email: "admin@gmail.com",
+        },
+        {
+          _id: 3,
+          name: "Jane Patt",
+          title: "Ui Designer",
+          role: "staff",
+          email: "jane@gmail.com",
+        },
+        {
+          _id: 3,
+          name: "David Miller",
+          title: "Developer",
+          role: "staff",
+          email: "david@gmail.com",
+        },
+      ],
+    },
+  ],
+  tasks: {
+    todo: 6,
+    "in progress": 3,
+    completed: 1,
+  },
+};
+
 export const activitiesData = [
   {
     _id: "0",
@@ -292,109 +334,51 @@ export const activitiesData = [
   },
 ];
 
-export const users = [
+export const chartData = [
   {
+    name: "High",
+    total: 2400,
+  },
+  {
+    name: "Medium",
+    total: 2290,
+  },
+  {
+    name: "Low",
+    total: 200,
+  },
+];
+export const dummyUsers = [
+  {
+    _id: "1",
     name: "John Doe",
-    title: "Software Engineer",
-    email: "john.doe@example.com",
-    role: "Developer",
+    email: "john@gmail.com",
+    role: "admin",
+    title: "Head of Hr",
     isActive: true,
   },
   {
-    name: "Jane Smith",
-    title: "Product Manager",
-    email: "jane.smith@example.com",
-    role: "Manager",
-  },
-  {
-    name: "Alex Johnson",
-    title: "UX Designer",
-    email: "alex.johnson@example.com",
-    role: "Designer",
+    _id: "2",
+    name: "Jack White",
+    email: "jack@gmail.com",
+    role: "staff",
+    title: "Retention staff",
     isActive: true,
   },
   {
-    name: "Emily Wilson",
-    title: "Data Analyst",
-    email: "emily.wilson@example.com",
-    role: "Analyst",
+    _id: "3",
+    name: "David Miller",
+    email: "miller@gmail.com",
+    role: "admin",
+    title: "Head of IT",
+    isActive: true,
   },
   {
-    name: "Michael Brown",
-    title: "QA Engineer",
-    email: "michael.brown@example.com",
-    role: "Tester",
-  },
-  {
-    name: "Emily Wilson",
-    title: "Data Analyst",
-    email: "emily.wilson@example.com",
-    role: "Analyst",
-  },
-  {
-    name: "Michael Brown",
-    title: "QA Engineer",
-    email: "michael.brown@example.com",
-    role: "Tester",
-  },
-  {
-    name: "Emily Wilson",
-    title: "Data Analyst",
-    email: "emily.wilson@example.com",
-    role: "Analyst",
-  },
-  {
-    name: "Michael Brown",
-    title: "QA Engineer",
-    email: "michael.brown@example.com",
-    role: "Tester",
-  },
-  {
-    name: "Emily Wilson",
-    title: "Data Analyst",
-    email: "emily.wilson@example.com",
-    role: "Analyst",
-  },
-  {
-    name: "Michael Brown",
-    title: "QA Engineer",
-    email: "michael.brown@example.com",
-    role: "Tester",
-  },
-  {
-    name: "Emily Wilson",
-    title: "Data Analyst",
-    email: "emily.wilson@example.com",
-    role: "Analyst",
-  },
-  {
-    name: "Michael Brown",
-    title: "QA Engineer",
-    email: "michael.brown@example.com",
-    role: "Tester",
-  },
-  {
-    name: "Emily Wilson",
-    title: "Data Analyst",
-    email: "emily.wilson@example.com",
-    role: "Analyst",
-  },
-  {
-    name: "Michael Brown",
-    title: "QA Engineer",
-    email: "michael.brown@example.com",
-    role: "Tester",
-  },
-  {
-    name: "Emily Wilson",
-    title: "Data Analyst",
-    email: "emily.wilson@example.com",
-    role: "Analyst",
-  },
-  {
-    name: "Michael Brown",
-    title: "QA Engineer",
-    email: "michael.brown@example.com",
-    role: "Tester",
+    _id: "4",
+    name: "Jane Black",
+    email: "john@gmail.com",
+    role: "staff",
+    title: "IT staff",
+    isActive: true,
   },
 ];

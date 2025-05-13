@@ -11,17 +11,4 @@ import Applications from "./Applications";
 import ManageJobs from "./ManageJobs";
 import ViewApplications from "./ViewApplications";
 
-export {
-  Dashboard,
-  Login,
-  TaskDetail,
-  Tasks,
-  Trash,
-  Users,
-  StatusPage,
-  SendEmail,
-  Jobs,
-  Applications,
-  ManageJobs,
-  ViewApplications,
-};
+export { Dashboard, Login, TaskDetail, Tasks, Trash, Users, StatusPage };
