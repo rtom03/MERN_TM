@@ -14,6 +14,7 @@ import { Chart, Loading, UserInfo } from "../components";
 import { useGetDasboardStatsQuery } from "../redux/slices/api/taskApiSlice";
 import { BGS, PRIOTITYSTYELS, TASK_TYPE, getInitials } from "../utils";
 import { useSelector } from "react-redux";
+import { summary, dummyTasks, dummyUsers } from "../utils/dummydata";
 
 const Card = ({ label, count, bg, icon }) => {
   return (
@@ -39,11 +40,12 @@ const Dashboard = () => {
   const { data, isLoading, error } = useGetDasboardStatsQuery();
   const { user } = useSelector((state) => state.auth);
 
+  // const totals = data?.tasks || [];
+  const totals = summary?.tasks || [];
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
-
-  const totals = data?.tasks || [];
 
   if (isLoading)
     return (
@@ -56,9 +58,10 @@ const Dashboard = () => {
     {
       _id: "1",
       label: "TOTAL TASK",
-      total: data?.totalTasks || 0,
+      // total: data?.totalTasks || 0,
+      total: summary?.totalTasks || 0,
       icon: <FaNewspaper />,
-      bg: "bg-[#1d4ed8]",
+      bg: "core",
     },
     {
       _id: "2",
@@ -99,9 +102,10 @@ const Dashboard = () => {
         </div>
         <div className="w-full flex flex-col md:flex-row gap-4 2xl:gap-10 py-8">
           {/* RECENT AUTHORS */}
-          {data && <TaskTable tasks={data?.last10Task} />}
+          {summary && <TaskTable tasks={summary?.last10Task} />}
           {/* RECENT USERS */}
-          {data && user?.isAdmin && <UserTable users={data?.users} />}
+          {/* {data && user?.isAdmin && <UserTable users={data?.users} />} */}
+          {summary && <UserTable users={dummyUsers.name} />}
         </div>
       </>
     </div>
@@ -127,7 +131,7 @@ const UserTable = ({ users }) => {
             <span className="text-center">{getInitials(user?.name)}</span>
           </div>
           <div>
-            <p> {user.name}</p>
+            <p className="text-xs text-black"> {user.name}</p>
             <span className="text-xs text-black">{user?.role}</span>
           </div>
         </div>
@@ -148,11 +152,11 @@ const UserTable = ({ users }) => {
   );
 
   return (
-    <div className="w-full md:w-1/3 bg-white h-fit px-2 md:px-6 py-4 shadow-md rounded">
+    <div className="w-full md:w-2/3 bg-white h-fit px-2 md:px-6 py-4 shadow-md rounded">
       <table className="w-full mb-5">
         <TableHeader />
         <tbody>
-          {users?.map((user, index) => (
+          {dummyUsers?.map((user, index) => (
             <TableRow key={index + user?._id} user={user} />
           ))}
         </tbody>
@@ -163,6 +167,7 @@ const UserTable = ({ users }) => {
 
 const TaskTable = ({ tasks }) => {
   const { user } = useSelector((state) => state.auth);
+  // const tasks = tasks;
 
   const ICONS = {
     high: <MdKeyboardDoubleArrowUp />,
@@ -204,7 +209,7 @@ const TaskTable = ({ tasks }) => {
 
       <td className="py-2">
         <div className="flex">
-          {task?.team.map((m, index) => (
+          {dummyUsers?.map((m, index) => (
             <div
               key={index}
               className={clsx(
@@ -237,7 +242,7 @@ const TaskTable = ({ tasks }) => {
         <table className="w-full ">
           <TableHeader />
           <tbody className="">
-            {tasks.map((task, id) => (
+            {dummyTasks.map((task, id) => (
               <TableRow key={task?._id + id} task={task} />
             ))}
           </tbody>
