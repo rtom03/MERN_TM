@@ -61,7 +61,7 @@ const Sidebar = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const path = location.pathname.split("/")[1];
-  const sidebarLinks = user.isAdmin ? linkData : linkData.slice(0, 5);
+  const sidebarLinks = user.isAdmin ? linkData : linkData.slice(0, 7);
 
   const closeSidebar = () => {
     dispatch(setOpenSidebar(false));

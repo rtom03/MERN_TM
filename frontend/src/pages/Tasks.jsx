@@ -8,6 +8,7 @@ import { AddTask, BoardView, TaskTitle } from "../components/tasks";
 import { useGetAllTaskQuery } from "../redux/slices/api/taskApiSlice";
 import { TASK_TYPE } from "../utils";
 import { useSelector } from "react-redux";
+import { dummyTasks } from "../utils/dummydata";
 
 const TABS = [
   { title: "Board View", icon: <MdGridView /> },
@@ -45,11 +46,12 @@ const Tasks = () => {
       <div className="flex items-center justify-between mb-4">
         <Title title={status ? `${status} Tasks` : "Tasks"} />
 
-        {!status && user?.isAdmin && (
+        {!status && (
+          //  user?.isAdmin &&
           <Button
             label="Create Task"
             icon={<IoMdAdd className="text-lg" />}
-            className="flex flex-row-reverse gap-1 items-center bg-blue-600 text-white rounded-md py-2 2xl:py-2.5"
+            className="flex flex-row-reverse gap-1 items-center core text-white rounded-md py-2 2xl:py-2.5"
             onClick={() => setOpen(true)}
           />
         )}
@@ -67,11 +69,10 @@ const Tasks = () => {
               <TaskTitle label="Completed" className={TASK_TYPE.completed} />
             </div>
           )}
-
           {selected === 0 ? (
-            <BoardView tasks={data?.tasks} />
+            <BoardView tasks={dummyTasks} />
           ) : (
-            <Table tasks={data?.tasks} />
+            <Table tasks={dummyTasks} />
           )}
         </Tabs>
       </div>
