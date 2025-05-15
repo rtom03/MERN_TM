@@ -9,7 +9,7 @@ import dbConnection from "./utils/db.js";
 
 dotenv.config();
 
-// dbConnection();
+dbConnection();
 
 const port = process.env.PORT || 5000;
 
