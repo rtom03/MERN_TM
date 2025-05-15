@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import moment from "moment";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaBug, FaSpinner, FaTasks, FaThumbsUp, FaUser } from "react-icons/fa";
 import { GrInProgress } from "react-icons/gr";
 import {
@@ -27,6 +27,7 @@ import {
   getCompletedSubTasks,
   getInitials,
 } from "../utils";
+import { activitiesData, dummyTasks } from "../utils/dummydata";
 
 const assets = [
   "https://images.pexels.com/photos/2418664/pexels-photo-2418664.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -44,7 +45,7 @@ const ICONS = {
 const bgColor = {
   high: "bg-red-200",
   medium: "bg-yellow-200",
-  low: "bg-blue-200",
+  low: "core",
 };
 
 const TABS = [
@@ -148,7 +149,7 @@ const Activities = ({ activity, id, refetch }) => {
       <div className="w-full md:w-1/2">
         <h4 className="text-gray-600 font-semibold text-lg mb-5">Activities</h4>
         <div className="w-full space-y-0">
-          {activity?.map((item, index) => (
+          {activitiesData?.map((item, index) => (
             <Card
               key={item.id}
               item={item}
@@ -204,7 +205,8 @@ const TaskDetail = () => {
     useChangeSubTaskStatusMutation();
 
   const [selected, setSelected] = useState(0);
-  const task = data?.task || [];
+  // const task = data?.task || [];
+  const task = dummyTasks[0];
 
   const handleSubmitAction = async (el) => {
     try {
