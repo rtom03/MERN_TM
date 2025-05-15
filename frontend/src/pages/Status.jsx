@@ -2,6 +2,7 @@ import React from "react";
 import { useGetUserTaskStatusQuery } from "../redux/slices/api/userApiSlice";
 import { countTasksByStage, getInitials } from "../utils";
 import { Loading, Title } from "../components";
+import { summary } from "../utils/dummydata";
 
 const StatusPage = () => {
   const { data, isLoading } = useGetUserTaskStatusQuery();
@@ -24,21 +25,21 @@ const StatusPage = () => {
   );
 
   const TableRow = ({ user }) => {
-    const counts = countTasksByStage(user?.tasks);
-
+    const counts = countTasksByStage(summary?.tasks);
+    console.log(user.user);
     return (
       <tr className="border-b border-gray-200 text-gray-600 hover:bg-gray-400/10">
         <td className="p-2">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-full text-white flex items-center justify-center text-sm bg-blue-700">
               <span className="text-xs md:text-sm text-center">
-                {getInitials(user.name)}
+                {/* {getInitials(user.name)} */}
               </span>
             </div>
-            {user.name}
+            {/* {user.name} */}
           </div>
         </td>
-        <td className="p-2">{user.title}</td>
+        {/* <td className="p-2">{user.title}</td> */}
         <td className="p-2">
           {
             <div className="flex items-center gap-2 text-white text-sm">
@@ -80,7 +81,8 @@ const StatusPage = () => {
             <table className="w-full mb-5">
               <TableHeader />
               <tbody>
-                {data?.map((user, index) => (
+                {/* {data?.map((user, index) => (   */}
+                {summary?.map((user, index) => (
                   <TableRow key={index} user={user} />
                 ))}
               </tbody>

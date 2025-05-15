@@ -35,6 +35,7 @@ const Tasks = () => {
   useEffect(() => {
     refetch();
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    // console.log("status", status);
   }, [open]);
 
   return isLoading ? (
@@ -56,7 +57,6 @@ const Tasks = () => {
           />
         )}
       </div>
-
       <div>
         <Tabs tabs={TABS} setSelected={setSelected}>
           {!status && (

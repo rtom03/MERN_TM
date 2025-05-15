@@ -244,47 +244,49 @@ export const dummyTasks = [
   },
 ];
 
-export const summary = {
-  totalTasks: 10,
-  last10Task: [
-    {
-      _id: "1",
-      title: "Test task",
-      date: "2025-02-09T00:00:00.000Z",
-      priority: "high",
-      stage: "todo",
-      assets: [],
-      team: [
-        {
-          _id: 3,
-          name: "John Doe",
-          title: "administrator",
-          role: "admin",
-          email: "admin@gmail.com",
-        },
-        {
-          _id: 3,
-          name: "Jane Patt",
-          title: "Ui Designer",
-          role: "staff",
-          email: "jane@gmail.com",
-        },
-        {
-          _id: 3,
-          name: "David Miller",
-          title: "Developer",
-          role: "staff",
-          email: "david@gmail.com",
-        },
-      ],
+export const summary = [
+  {
+    totalTasks: 10,
+    last10Task: [
+      {
+        _id: "1",
+        title: "Test task",
+        date: "2025-02-09T00:00:00.000Z",
+        priority: "high",
+        stage: "todo",
+        assets: [],
+      },
+    ],
+    user: [
+      {
+        _id: 3,
+        name: "John Doe",
+        title: "administrator",
+        role: "admin",
+        email: "admin@gmail.com",
+      },
+      {
+        _id: 3,
+        name: "Jane Patt",
+        title: "Ui Designer",
+        role: "staff",
+        email: "jane@gmail.com",
+      },
+      {
+        _id: 3,
+        name: "David Miller",
+        title: "Developer",
+        role: "staff",
+        email: "david@gmail.com",
+      },
+    ],
+    tasks: {
+      todo: 6,
+      "in progress": 3,
+      completed: 1,
     },
-  ],
-  tasks: {
-    todo: 6,
-    "in progress": 3,
-    completed: 1,
   },
-};
+];
 
 export const activitiesData = [
   {

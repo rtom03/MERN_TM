@@ -1,22 +1,22 @@
-// import express from "express";
-// import {
-//   activateUserProfile,
-//   changeUserPassword,
-//   deleteUserProfile,
-//   getNotificationsList,
-//   getTeamList,
-//   getUserTaskStatus,
-//   loginUser,
-//   logoutUser,
-//   markNotificationRead,
-//   registerUser,
-//   updateUserProfile,
-// } from "../controllers/userController.js";
-// import { isAdminRoute, protectRoute } from "../middleware/authMiddleware.js";
+import express from "express";
+import {
+  //   activateUserProfile,
+  //   changeUserPassword,
+  //   deleteUserProfile,
+  //   getNotificationsList,
+  //   getTeamList,
+  //   getUserTaskStatus,
+  //   loginUser,
+  //   logoutUser,
+  //   markNotificationRead,
+  registerUser,
+  //   updateUserProfile,
+} from "../controller/userController.js";
+// import { isAdminRoute, protectdRoute } from "../middleware/authMiddleware.js";
 
-// const router = express.Router();
+const router = express.Router();
 
-// router.post("/register", registerUser);
+router.post("/register", registerUser);
 // router.post("/login", loginUser);
 // router.post("/logout", logoutUser);
 
@@ -33,4 +33,4 @@
 //   .put(protectRoute, isAdminRoute, activateUserProfile)
 //   .delete(protectRoute, isAdminRoute, deleteUserProfile);
 
-// export default router;
+export default router;
