@@ -1,7 +1,7 @@
 import asyncHandler from "express-async-handler";
 import Notice from "../models/notis.js";
 import User from "../models/userModel.js";
-import createJWT from "../utils/index.js";
+import { config } from "../config/config.js";
 
 // POST request - login user
 const loginUser = asyncHandler(async (req, res) => {
@@ -25,10 +25,8 @@ const loginUser = asyncHandler(async (req, res) => {
   const isMatch = await user.matchPassword(password);
 
   if (user && isMatch) {
-    createJWT(res, user._id);
-
+    config.createJWT(res, user._id);
     user.password = undefined;
-
     res.status(200).json(user);
   } else {
     return res
@@ -79,22 +77,6 @@ const logoutUser = (req, res) => {
   });
   res.status(200).json({ message: "Logged out successfully" });
 };
-
-// @GET -   Get user profile
-// const getUserProfile = asyncHandler(async (req, res) => {
-//   const { userId } = req.user;
-
-//   const user = await User.findById(userId);
-
-//   user.password = undefined;
-
-//   if (user) {
-//     res.json({ ...user });
-//   } else {
-//     res.status(404);
-//     throw new Error("User not found");
-//   }
-// });
 
 const getTeamList = asyncHandler(async (req, res) => {
   const { search } = req.query;

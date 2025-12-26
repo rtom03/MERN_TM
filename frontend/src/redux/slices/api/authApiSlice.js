@@ -16,7 +16,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}/register`,
         method: "POST",
         body: data,
-        credentials: "include",
+        credentials: "include",  
       }),
     }),
     logout: builder.mutation({
