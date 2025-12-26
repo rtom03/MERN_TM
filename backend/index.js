@@ -5,11 +5,11 @@ import express from "express";
 import morgan from "morgan";
 import { errorHandler, routeNotFound } from "./middleware/errorMiddleware.js";
 import routes from "./routes/index.js";
-import dbConnection from "./utils/connectDB.js";
+import { config } from "./config/config.js";
 
 dotenv.config();
 
-dbConnection();
+config.dbConnection();
 
 const port = process.env.PORT || 5000;
 
@@ -17,7 +17,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://mern-task-manager-app.netlify.app", "http://localhost:3000", "http://localhost:3001"],
+    origin: ["http://localhost:3000", "http://localhost:3001"],
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
